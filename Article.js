@@ -1,11 +1,11 @@
 import mongoose from 'mongoose';
 
-// Documents1 Modal Schema
+// Documents1 Schema
 const documents1Schema = new mongoose.Schema({
     name: {type: String, required: true},
 })
 
-// Documents2 Modal Schema
+// Documents2 Schema
 const documents2Schema = new mongoose.Schema({
     name: {type: String, required: true},
 })

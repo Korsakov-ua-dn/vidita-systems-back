@@ -5,7 +5,18 @@ class ArticlesController {
         try {
             const article = await ArticlesService.create(req.body)
             res.json({
-                "RequestId": article._id
+                "requestId": article._id
+            })
+        } catch (e) {
+            res.status(500).json(e)
+        }
+    }
+
+    async cancel(req, res) {
+        try {
+            res.json({
+                "status": "ok",
+                "removeIds": [...req.body]
             })
         } catch (e) {
             res.status(500).json(e)
@@ -21,6 +32,5 @@ class ArticlesController {
         }
     }
 }
-
 
 export default new ArticlesController();
